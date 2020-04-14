@@ -1,5 +1,6 @@
 {
-  "name": "product-market-dev",
+  "name": "ruminant-dev",
+  "displayName": "ruminant.dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
