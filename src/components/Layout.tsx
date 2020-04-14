@@ -4,8 +4,10 @@ import {
   useEffect,
   ReactNode,
   Dispatch,
-  SetStateAction
+  SetStateAction,
 } from "react";
+
+import headshotImg from "../static/ryan-wilson.jpg";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -27,7 +29,7 @@ const routeConfig: RouteItem[] = [
         strokeWidth="2"
         d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
       />
-    )
+    ),
   },
   {
     displayName: "Articles",
@@ -39,7 +41,7 @@ const routeConfig: RouteItem[] = [
         strokeWidth="2"
         d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
       />
-    )
+    ),
   },
   // {
   //   displayName: "Tutorials",
@@ -63,7 +65,7 @@ const routeConfig: RouteItem[] = [
         strokeWidth="2"
         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
       />
-    )
+    ),
   },
   {
     displayName: "Projects",
@@ -75,8 +77,8 @@ const routeConfig: RouteItem[] = [
         strokeWidth="2"
         d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
       />
-    )
-  }
+    ),
+  },
   // {
   //   displayName: "Metrics",
   //   route: "/metrics",
@@ -135,7 +137,7 @@ function DesktopNav() {
               <div>
                 <img
                   className="inline-block h-9 w-9 rounded-full"
-                  src="/ryan-wilson.jpg"
+                  src={headshotImg}
                   alt="Ryan Wilson's Profile Picture"
                 />
               </div>
@@ -242,7 +244,7 @@ function MobileNav({ sidebarOpen, setSidebarOpen }: MobileNavPropTypes) {
               <div>
                 <img
                   className="inline-block h-10 w-10 rounded-full"
-                  src="/ryan-wilson.jpg"
+                  src={headshotImg}
                   alt="Ryan Wilson's Profile Picture"
                 />
               </div>
@@ -268,7 +270,7 @@ export default ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("keydown", key => {
+    window.addEventListener("keydown", (key) => {
       if (key.code === "Escape") {
         setSidebarOpen(false);
       }
