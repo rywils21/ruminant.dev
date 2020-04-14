@@ -7,10 +7,10 @@ import {
   SetStateAction,
 } from "react";
 
-import headshotImg from "../static/ryan-wilson.jpg";
-
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+const headshotImg = "ryan-wilson.jpg";
 
 interface RouteItem {
   displayName: string;
