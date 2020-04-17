@@ -1,11 +1,7 @@
 module.exports = {
   theme: {
-    extend: {}
+    extend: {},
   },
   variants: {},
-  plugins: [
-    require("@tailwindcss/ui")({
-      layout: "sidebar"
-    })
-  ]
+  plugins: [require("@tailwindcss/ui")()],
 };
