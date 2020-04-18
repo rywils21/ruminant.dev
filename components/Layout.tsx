@@ -15,258 +15,49 @@ const headshotImg = "/ryan-wilson.jpg";
 interface RouteItem {
   displayName: string;
   route: string;
-  icon: ReactNode;
 }
 
-const routeConfig: RouteItem[] = [
+const mainNav: RouteItem[] = [
   {
     displayName: "Home",
     route: "/",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10M9 21h6"
-      />
-    ),
   },
   {
-    displayName: "Articles",
-    route: "/articles",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-      />
-    ),
-  },
-  // {
-  //   displayName: "Tutorials",
-  //   route: "/tutorials",
-  //   icon: (
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-  //     />
-  //   )
-  // },
-  {
-    displayName: "Ideas",
-    route: "/ideas",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-      />
-    ),
+    displayName: "Courses",
+    route: "/courses",
   },
   {
     displayName: "Projects",
     route: "/projects",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-      />
-    ),
   },
-  // {
-  //   displayName: "Metrics",
-  //   route: "/metrics",
-  //   icon: (
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-  //     />
-  //   )
-  // }
+  {
+    displayName: "Articles",
+    route: "/articles",
+  },
+  {
+    displayName: "Contact",
+    route: "/contact",
+  },
 ];
 
-function DesktopNav() {
+const footerNav: RouteItem[] = [
+  {
+    displayName: "Home",
+    route: "/",
+  },
+  {
+    displayName: "About",
+    route: "/about",
+  },
+  {
+    displayName: "Contact",
+    route: "/contact",
+  },
+];
+
+function Nav() {
   const router = useRouter();
 
-  return (
-    <div className="hidden md:flex md:flex-shrink-0">
-      <div className="flex flex-col w-64 bg-gray-800">
-        <div className="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-          <div className="flex items-center flex-shrink-0 px-4">
-            {/* <img
-                className="h-8 w-auto"
-                src="/img/logos/workflow-logo-on-dark.svg"
-              /> */}
-            <div className="text-lg text-gray-300 font-bold">Ruminant.dev</div>
-          </div>
-          <nav className="mt-5 flex-1 px-2 bg-gray-800">
-            {routeConfig.map((route: RouteItem) => (
-              <Link href={route.route} key={route.route}>
-                <a
-                  className={`group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150 ${
-                    router.pathname === route.route
-                      ? "text-white bg-gray-900"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white"
-                  }`}
-                >
-                  <svg
-                    className="mr-3 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    {route.icon}
-                  </svg>
-                  {route.displayName}
-                </a>
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex-shrink-0 flex bg-gray-700 p-4">
-          <a href="#" className="flex-shrink-0 group block focus:outline-none">
-            <div className="flex items-center">
-              <div>
-                <img
-                  className="inline-block h-9 w-9 rounded-full"
-                  src={headshotImg}
-                  alt="Ryan Wilson's Profile Picture"
-                />
-              </div>
-              <div className="ml-3">
-                <p className="text-sm leading-5 font-medium text-white">
-                  By Ryan Wilson
-                </p>
-                <Link href="/contact">
-                  <p className="text-xs leading-4 font-medium text-gray-400 group-hover:text-gray-300 group-focus:underline transition ease-in-out duration-150">
-                    Contact
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface MobileNavPropTypes {
-  sidebarOpen: boolean;
-  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-function MobileNav({ sidebarOpen, setSidebarOpen }: MobileNavPropTypes) {
-  const router = useRouter();
-  return (
-    <div className="md:hidden">
-      <div
-        onClick={() => {
-          setSidebarOpen(false);
-        }}
-        className={`fixed inset-0 z-30 bg-gray-600 opacity-0 pointer-events-none transition-opacity ease-linear duration-300 ${
-          sidebarOpen
-            ? "opacity-75 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      ></div>
-      <div
-        className={`fixed inset-y-0 left-0 flex flex-col z-40 max-w-xs w-full bg-gray-800 transform ease-in-out duration-300 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }  `}
-      >
-        <div className="absolute top-0 right-0 -mr-14 p-1">
-          <button
-            style={{ display: sidebarOpen ? "" : "none" }}
-            onClick={() => {
-              setSidebarOpen(false);
-            }}
-            className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
-          >
-            <svg
-              className="h-6 w-6 text-white"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-          <div className="flex-shrink-0 flex items-center px-4">
-            {/* <img
-                className="h-8 w-auto"
-                src="/img/logos/workflow-logo-on-dark.svg"
-              /> */}
-            <div className="text-lg text-gray-300 font-bold">Ruminant.dev</div>
-          </div>
-          <nav className="mt-5 px-2">
-            {routeConfig.map((route: RouteItem) => (
-              <Link href={route.route} key={route.route}>
-                <a
-                  className={`group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150 ${
-                    router.pathname === route.route
-                      ? "text-white bg-gray-900"
-                      : "mt-1 text-gray-300 hover:text-white hover:bg-gray-700 focus:text-white"
-                  }`}
-                >
-                  <svg
-                    className="mr-3 h-6 w-6 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    {route.icon}
-                  </svg>
-                  {route.displayName}
-                </a>
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex-shrink-0 flex bg-gray-700 p-4">
-          <a href="#" className="flex-shrink-0 group block">
-            <div className="flex items-center">
-              <div>
-                <img
-                  className="inline-block h-10 w-10 rounded-full"
-                  src={headshotImg}
-                  alt="Ryan Wilson's Profile Picture"
-                />
-              </div>
-              <div className="ml-3">
-                <p className="text-base leading-6 font-medium text-white">
-                  By Ryan Wilson
-                </p>
-                <Link href="/contact">
-                  <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                    Contact
-                  </p>
-                </Link>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -278,155 +69,132 @@ export default ({ children }) => {
   }, []);
 
   return (
-    <div className="relative">
-      <nav className="bg-white shadow fixed z-10 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <h2>RUMINANT.DEV</h2>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex">
-                <a className="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
-                >
-                  Courses
-                </a>
-                <a
-                  href="#"
-                  className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#"
-                  className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
-                >
-                  Articles
-                </a>
-              </div>
+    <nav className="bg-white shadow fixed z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <div className="flex-shrink-0 flex items-center">
+              <h2>RUMINANT.DEV</h2>
             </div>
-            <div className="flex">
-              <div className="hidden sm:ml-6 sm:flex">
-                <a className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                  Contact
-                </a>
-              </div>
+            <div className="hidden sm:ml-6 sm:flex">
+              {mainNav.map((route: RouteItem, i: number) => {
+                return (
+                  <Link href={route.route}>
+                    <a
+                      className={`${
+                        i > 0 ? "ml-8" : ""
+                      } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none ${
+                        router.pathname === route.route
+                          ? "border-indigo-500 text-gray-900 focus:border-indigo-700"
+                          : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
+                      } transition duration-150 ease-in-out`}
+                    >
+                      {route.displayName}
+                    </a>
+                  </Link>
+                );
+              })}
             </div>
-            <div className="-mr-2 flex items-center sm:hidden">
-              {/* <!-- Mobile menu button --> */}
-              <button
-                onClick={() => {
-                  setMenuOpen(!menuOpen);
-                }}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+          </div>
+          <div className="flex">
+            <div className="hidden sm:ml-6 sm:flex">
+              {/* <a className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                Contact
+              </a> */}
+            </div>
+          </div>
+          <div className="-mr-2 flex items-center sm:hidden">
+            {/* <!-- Mobile menu button --> */}
+            <button
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+              }}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            >
+              {/* <!-- Icon when menu is closed. -->*/}
+              <svg
+                className={`${menuOpen ? "hidden" : "block"} h-6 w-6`}
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
               >
-                {/* <!-- Icon when menu is closed. -->*/}
-                <svg
-                  className={`${menuOpen ? "hidden" : "block"} h-6 w-6`}
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-                {/* <!-- Icon when menu is open. -->*/}
-                <svg
-                  className={`${menuOpen ? "block" : "hidden"} h-6 w-6`}
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              {/* <!-- Icon when menu is open. -->*/}
+              <svg
+                className={`${menuOpen ? "block" : "hidden"} h-6 w-6`}
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
         </div>
+      </div>
 
-        <div className={`${menuOpen ? "block" : "hidden"} sm:hidden`}>
-          <div className="pt-2 pb-3">
-            <a
-              href="#"
-              className="block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
-            >
-              Courses
-            </a>
-            <a
-              href="#"
-              className="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
-            >
-              Projects
-            </a>
-            <a
-              href="#"
-              className="mt-1 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out"
-            >
-              Articles
-            </a>
-          </div>
+      <div className={`${menuOpen ? "block" : "hidden"} sm:hidden`}>
+        <div className="pt-2 pb-3">
+          {mainNav.map((route: RouteItem, i: number) => {
+            return (
+              <Link href={route.route}>
+                <a
+                  className={`${
+                    i > 0 ? "mt-1" : ""
+                  } block pl-3 pr-4 py-2 border-l-4 text-base font-medium focus:outline-none ${
+                    router.pathname === route.route
+                      ? "border-indigo-500  text-indigo-700 bg-indigo-50  focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700"
+                      : "border-transparent  text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                  } transition duration-150 ease-in-out`}
+                >
+                  {route.displayName}
+                </a>
+              </Link>
+            );
+          })}
         </div>
-      </nav>
+      </div>
+    </nav>
+  );
+}
 
-      <main
-        className="flex-1 relative z-0 overflow-y-auto pt-16 pb-6 focus:outline-none  min-h-screen"
-        tabIndex={0}
-      >
-        {children}
-      </main>
-
-      <footer>
-        <div className="bg-gray-900">
-          <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-            <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
-              <div className="px-5 py-2">
-                <a
-                  href="#"
-                  className="text-base leading-6 text-gray-500 hover:text-gray-900"
-                >
-                  About
-                </a>
-              </div>
-              <div className="px-5 py-2">
-                <a
-                  href="#"
-                  className="text-base leading-6 text-gray-500 hover:text-gray-900"
-                >
-                  Articles
-                </a>
-              </div>
-
-              <div className="px-5 py-2">
-                <a
-                  href="/contact"
-                  className="text-base leading-6 text-gray-500 hover:text-gray-900"
-                >
-                  Contact
-                </a>
-              </div>
-            </nav>
-            <div className="mt-8 flex justify-center">
-              <a href="#" className="ml-6 text-gray-400 hover:text-gray-500">
+function Footer() {
+  return (
+    <footer>
+      <div className="bg-gray-900">
+        <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+          <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
+            {footerNav.map((route: RouteItem, i: number) => {
+              return (
+                <div className="px-5 py-2">
+                  <Link href={route.route}>
+                    <a
+                      className={`text-base leading-6 text-gray-500 hover:text-gray-100`}
+                    >
+                      {route.displayName}
+                    </a>
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+          <div className="mt-8 flex justify-center">
+            <Link href="https://twitter.com/rywils21">
+              <a
+                target="_blank"
+                className="ml-6 text-gray-400 hover:text-gray-100"
+              >
                 <span className="sr-only">Twitter</span>
                 <svg
                   className="h-6 w-6"
@@ -436,7 +204,12 @@ export default ({ children }) => {
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
               </a>
-              <a href="#" className="ml-6 text-gray-400 hover:text-gray-500">
+            </Link>
+            <Link href="https://github.com/rywils21">
+              <a
+                target="_blank"
+                className="ml-6 text-gray-400 hover:text-gray-100"
+              >
                 <span className="sr-only">GitHub</span>
                 <svg
                   className="h-6 w-6"
@@ -450,15 +223,32 @@ export default ({ children }) => {
                   />
                 </svg>
               </a>
-            </div>
-            <div className="mt-8">
-              <p className="text-center text-base leading-6 text-gray-400">
-                &copy; 2020 Ryan Wilson. All rights reserved.
-              </p>
-            </div>
+            </Link>
+          </div>
+          <div className="mt-8">
+            <p className="text-center text-base leading-6 text-gray-400">
+              &copy; 2020 Ryan Wilson. All rights reserved.
+            </p>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
+  );
+}
+
+export default ({ children }) => {
+  return (
+    <div className="relative">
+      <Nav />
+
+      <main
+        className="flex-1 relative z-0 overflow-y-auto pt-16 focus:outline-none  min-h-screen"
+        tabIndex={0}
+      >
+        {children}
+      </main>
+
+      <Footer />
     </div>
   );
 };
