@@ -3,6 +3,8 @@ import Layout from "../../../components/Layout";
 import Link from "next/link";
 
 import Head from "next/head";
+import { CourseTOC } from "../../../components/CourseTOC";
+import { toc } from "./toc";
 
 export default () => {
   return (
@@ -162,145 +164,7 @@ export default () => {
       </div>
 
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white shadow rounded overflow-hidden max-w-screen-xl mx-auto">
-          <ul>
-            <li>
-              <Link href="/courses/web-development-foundations/1/build-a-web-page">
-                <a className="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
-                  <div className="px-4 py-4 flex items-center sm:px-6">
-                    <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                      <div>
-                        <div className="text-xl leading-5 font-medium text-indigo-600 truncate">
-                          Module 1:{" "}
-                          <span className="ml-1 font-normal text-gray-500">
-                            Website Basics
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ml-5 flex-shrink-0">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            </li>
-            <li className="border-t border-gray-200">
-              <Link href="/courses/web-development-foundations/1/build-a-web-page">
-                <a className="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
-                  <div className="px-4 py-4 flex items-center sm:px-6">
-                    <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                      <div>
-                        <div className="text-sm leading-5 font-medium text-indigo-600 truncate">
-                          Build a web page
-                        </div>
-                        <div className="mt-2 flex">
-                          <div className="flex items-center text-sm leading-5 text-gray-500">
-                            A basic introduction to building a web page with
-                            html and styling with css
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ml-5 flex-shrink-0">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            </li>
-            <li className="border-t border-gray-200">
-              <Link href="/courses/web-development-foundations/2/deploy-a-website">
-                <a className="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
-                  <div className="px-4 py-4 flex items-center sm:px-6">
-                    <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                      <div>
-                        <div className="text-sm leading-5 font-medium text-indigo-600 truncate">
-                          Deploy a website
-                        </div>
-                        <div className="mt-2 flex">
-                          <div className="flex items-center text-sm leading-5 text-gray-500">
-                            Deploy a web page to the world wide web
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ml-5 flex-shrink-0">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            </li>
-            <li className="border-t border-gray-200">
-              <Link href="/courses/web-development-foundations/3/how-the-internet-works">
-                <a className="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
-                  <div className="px-4 py-4 flex items-center sm:px-6">
-                    <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                      <div>
-                        <div className="text-sm leading-5 font-medium text-indigo-600 truncate">
-                          <span className="font-normal text-gray-500">
-                            Overview:{" "}
-                          </span>
-                          How the internet works
-                        </div>
-                        <div className="mt-2 flex">
-                          <div className="flex items-center text-sm leading-5 text-gray-500">
-                            A basic introduction to building a web page with
-                            html and styling with css
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="ml-5 flex-shrink-0">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <CourseTOC modules={toc} />
       </div>
     </Layout>
   );
