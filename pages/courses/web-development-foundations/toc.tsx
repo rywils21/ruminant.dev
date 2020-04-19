@@ -1,4 +1,6 @@
-export const toc = [
+import { ModuleTOC } from "../../../models";
+
+export const toc: ModuleTOC[] = [
   {
     module: {
       title: "Website Basics",

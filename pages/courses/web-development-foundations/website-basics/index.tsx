@@ -4,6 +4,7 @@ import { CourseTOC } from "../../../../components/CourseTOC";
 
 import Head from "next/head";
 import { toc } from "../toc";
+import CourseLayout from "../../../../components/CourseLayout";
 
 const websiteBasicsTOC = [
   {
@@ -14,7 +15,7 @@ const websiteBasicsTOC = [
 
 export default () => {
   return (
-    <Layout>
+    <CourseLayout modules={toc}>
       <Head>
         <title>Web Development Foundations</title>
       </Head>
@@ -38,6 +39,6 @@ export default () => {
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
         <CourseTOC modules={websiteBasicsTOC} />
       </div>
-    </Layout>
+    </CourseLayout>
   );
 };

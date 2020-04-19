@@ -4,15 +4,19 @@ import { useSpring, animated } from "react-spring";
 import Layout from "../../../../components/Layout";
 
 import Head from "next/head";
+import CourseLayout from "../../../../components/CourseLayout";
+import { toc } from "../toc";
 
 export default () => {
   return (
-    <Layout>
+    <CourseLayout modules={toc}>
       <Head>
         <title>Home</title>
       </Head>
 
-      <div className="relative bg-white overflow-hidden">Deploy a website</div>
-    </Layout>
+      <div className="relative bg-white overflow-hidden max-w-screen-xl mx-auto">
+        Deploy a website
+      </div>
+    </CourseLayout>
   );
 };
