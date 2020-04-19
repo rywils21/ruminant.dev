@@ -56,15 +56,16 @@ export const toc = [
   },
   {
     module: {
-      title: "Build a blog using React, Next.js, and Zeit",
+      title: "Build a blog",
       href: "",
     },
-    lessons: [
-      {
-        title: "Setup your project",
-        description: "Get started with a basic Next.js site",
-        href: "",
-      },
-    ],
+    lessons: [],
+  },
+  {
+    module: {
+      title: "Build a Task Tracker",
+      href: "",
+    },
+    lessons: [],
   },
 ];
