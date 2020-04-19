@@ -4,18 +4,22 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "./Layout";
-import { ModuleTOC, ModuleLink, LessonLink } from "../models/index";
+import {
+  ModuleTOC,
+  ModuleLink,
+  LessonLink,
+  PagerOptions,
+} from "../models/index";
 
 interface Props {
   children: ReactNode;
-  modules: ModuleTOC[];
+  pagerOptions: PagerOptions;
 }
 
-export default ({ children, modules }) => {
-  const router = useRouter();
-
-  const path = router.pathname;
-
+export function getPagerOptions(
+  path: string,
+  modules: ModuleTOC[]
+): PagerOptions {
   let previous: ModuleLink | LessonLink | null = null;
   let current: ModuleLink | LessonLink | null = null;
   let next: ModuleLink | LessonLink | null = null;
@@ -62,6 +66,16 @@ export default ({ children, modules }) => {
       }
     }
   }
+
+  return {
+    previous,
+    current,
+    next,
+  };
+}
+
+export default ({ children, pagerOptions }) => {
+  const { current, previous, next } = pagerOptions;
 
   return (
     <Layout>

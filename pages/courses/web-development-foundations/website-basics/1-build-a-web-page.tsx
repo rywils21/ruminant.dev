@@ -3,12 +3,18 @@ import "../../../../styles/index.css";
 import Head from "next/head";
 import CourseLayout from "../../../../components/CourseLayout";
 import { toc } from "../toc";
+import { getPagerOptions } from "../../../../components/CourseLayout";
+import { PagerOptions } from "../../../../models/index";
 
-export default () => {
+interface Props {
+  pagerOptions: PagerOptions;
+}
+
+export default ({ pagerOptions }: Props) => {
   return (
-    <CourseLayout modules={toc}>
+    <CourseLayout pagerOptions={pagerOptions}>
       <Head>
-        <title>Home</title>
+        <title>Build a web page</title>
       </Head>
 
       <div className="relative bg-white overflow-hidden max-w-screen-xl mx-auto">
@@ -17,3 +23,16 @@ export default () => {
     </CourseLayout>
   );
 };
+
+export const path =
+  "/courses/web-development-foundations/website-basics/1-build-a-web-page";
+
+export async function getStaticProps() {
+  const pagerOptions = getPagerOptions(path, toc);
+
+  return {
+    props: {
+      pagerOptions,
+    },
+  };
+}

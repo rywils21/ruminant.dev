@@ -5,6 +5,8 @@ import { CourseTOC } from "../../../../components/CourseTOC";
 import Head from "next/head";
 import { toc } from "../toc";
 import CourseLayout from "../../../../components/CourseLayout";
+import { getPagerOptions } from "../../../../components/CourseLayout";
+import { PagerOptions } from "../../../../models/index";
 
 const websiteBasicsTOC = [
   {
@@ -13,9 +15,13 @@ const websiteBasicsTOC = [
   },
 ];
 
-export default () => {
+interface Props {
+  pagerOptions: PagerOptions;
+}
+
+export default ({ pagerOptions }: Props) => {
   return (
-    <CourseLayout modules={toc}>
+    <CourseLayout pagerOptions={pagerOptions}>
       <Head>
         <title>Web Development Foundations</title>
       </Head>
@@ -42,3 +48,15 @@ export default () => {
     </CourseLayout>
   );
 };
+
+export const path = "/courses/web-development-foundations/website-basics";
+
+export async function getStaticProps() {
+  const pagerOptions = getPagerOptions(path, toc);
+
+  return {
+    props: {
+      pagerOptions,
+    },
+  };
+}

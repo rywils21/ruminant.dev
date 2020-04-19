@@ -6,10 +6,16 @@ import Layout from "../../../../components/Layout";
 import Head from "next/head";
 import CourseLayout from "../../../../components/CourseLayout";
 import { toc } from "../toc";
+import { PagerOptions } from "../../../../models/index";
+import { getPagerOptions } from "../../../../components/CourseLayout";
 
-export default () => {
+interface Props {
+  pagerOptions: PagerOptions;
+}
+
+export default ({ pagerOptions }: Props) => {
   return (
-    <CourseLayout modules={toc}>
+    <CourseLayout pagerOptions={pagerOptions}>
       <Head>
         <title>Home</title>
       </Head>
@@ -20,3 +26,16 @@ export default () => {
     </CourseLayout>
   );
 };
+
+export const path =
+  "/courses/web-development-foundations/website-basics/3-how-the-internet-works";
+
+export async function getStaticProps() {
+  const pagerOptions = getPagerOptions(path, toc);
+
+  return {
+    props: {
+      pagerOptions,
+    },
+  };
+}
