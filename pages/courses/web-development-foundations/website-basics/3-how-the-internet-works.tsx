@@ -5,7 +5,7 @@ import Layout from "../../../../components/Layout";
 
 import Head from "next/head";
 import CourseLayout from "../../../../components/CourseLayout";
-import { toc } from "../toc";
+import { toc } from "../../../../content/toc";
 import { PagerOptions } from "../../../../models/index";
 import { getPagerOptions } from "../../../../components/CourseLayout";
 

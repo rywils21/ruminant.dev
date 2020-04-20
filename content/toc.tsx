@@ -1,4 +1,4 @@
-import { ModuleTOC } from "../../../models";
+import { ModuleTOC } from "../models";
 
 export const toc: ModuleTOC[] = [
   {

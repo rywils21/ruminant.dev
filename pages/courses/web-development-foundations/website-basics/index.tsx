@@ -3,7 +3,7 @@ import Layout from "../../../../components/Layout";
 import { CourseTOC } from "../../../../components/CourseTOC";
 
 import Head from "next/head";
-import { toc } from "../toc";
+import { toc } from "../../../../content/toc";
 import CourseLayout from "../../../../components/CourseLayout";
 import { getPagerOptions } from "../../../../components/CourseLayout";
 import { PagerOptions } from "../../../../models/index";

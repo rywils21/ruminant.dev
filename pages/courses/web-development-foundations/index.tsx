@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Head from "next/head";
 import { CourseTOC } from "../../../components/CourseTOC";
-import { toc } from "./toc";
+import { toc } from "../../../content/toc";
 import { ReactNode } from "react";
 
 interface FeatureTileData {
