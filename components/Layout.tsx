@@ -79,9 +79,6 @@ function Nav() {
                 src="/logo.svg"
                 alt="Ruminant.dev logo"
               />
-              <h2 className="text-lg font-semibold font-display text-gray-900 sm:text-lg ml-2">
-                RUMINANT.DEV
-              </h2>
             </div>
             <div className="hidden sm:ml-6 sm:flex">
               {mainNav.map((route: RouteItem, i: number) => {
