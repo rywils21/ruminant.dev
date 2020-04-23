@@ -1,12 +1,12 @@
 import "../../../../styles/index.css";
-import Layout from "../../../../components/Layout";
-import { CourseTOC } from "../../../../components/CourseTOC";
+import Layout from "../../../components/Layout";
+import { CourseTOC } from "../../../components/CourseTOC";
 
 import Head from "next/head";
-import { toc } from "../../../../content/toc";
-import CourseLayout from "../../../../components/CourseLayout";
-import { getPagerOptions } from "../../../../components/CourseLayout";
-import { PagerOptions } from "../../../../models/index";
+import { toc } from "../../../content/toc";
+import CourseLayout from "../../../components/CourseLayout";
+import { getPagerOptions } from "../../../components/CourseLayout";
+import { PagerOptions } from "../../../models/index";
 
 const websiteBasicsTOC = [
   {

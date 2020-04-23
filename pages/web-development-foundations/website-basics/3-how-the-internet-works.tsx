@@ -1,13 +1,13 @@
 import "../../../../styles/index.css";
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import Layout from "../../../../components/Layout";
+import Layout from "../../../components/Layout";
 
 import Head from "next/head";
-import CourseLayout from "../../../../components/CourseLayout";
-import { toc } from "../../../../content/toc";
-import { PagerOptions } from "../../../../models/index";
-import { getPagerOptions } from "../../../../components/CourseLayout";
+import CourseLayout from "../../../components/CourseLayout";
+import { toc } from "../../../content/toc";
+import { PagerOptions } from "../../../models/index";
+import { getPagerOptions } from "../../../components/CourseLayout";
 
 interface Props {
   pagerOptions: PagerOptions;
