@@ -4,6 +4,20 @@ import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import glob from "glob";
 import Head from "next/head";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
+const markdownRenderers = {
+  code: ({ language, value }) => {
+    return (
+      <div className="rounded bg-gray-800">
+        <SyntaxHighlighter language={language} style={okaidia}>
+          {value}
+        </SyntaxHighlighter>
+      </div>
+    );
+  },
+};
 
 export default ({
   lessonData,
@@ -14,6 +28,8 @@ export default ({
 }) => {
   // TODO: craft breadcrumb item
   // TODO: Add next and prev links
+
+  console.log("lesson content: ", lessonContent);
   return (
     <Layout>
       <Head>
@@ -26,7 +42,7 @@ export default ({
       </div>
 
       <div>
-        <ReactMarkdown source={lessonContent} />
+        <ReactMarkdown source={lessonContent} renderers={markdownRenderers} />
       </div>
     </Layout>
   );

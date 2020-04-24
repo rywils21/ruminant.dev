@@ -15,10 +15,12 @@ Seems like there will definitely need to be some formatting done on this content
 
 ## h2
 
-```
+```javascript
 function test() {
   const x = 4;
 }
 ```
+
+some description text
 
 and an inline code `const x = 4;` looks as such.
