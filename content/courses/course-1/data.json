@@ -1,0 +1,41 @@
+{
+  "path": "course-1",
+  "title": "Course One",
+  "description": "",
+  "modules": [
+    {
+      "path": "course-1/module-1",
+      "title": "Module One",
+      "description": "",
+      "lessons": [
+        {
+          "path": "course-1/module-1/lesson-1",
+          "title": "Lesson One",
+          "description": "This is lesson one covering html"
+        },
+        {
+          "path": "course-1/module-1/lesson-2",
+          "title": "Lesson Two",
+          "description": "This is lesson 2 covering deployment"
+        }
+      ]
+    },
+    {
+      "path": "course-1/module-2",
+      "title": "Module Two",
+      "description": "",
+      "lessons": [
+        {
+          "path": "course-1/module-2/lesson-1",
+          "title": "Lesson One",
+          "description": ""
+        },
+        {
+          "path": "course-1/module-2/lesson-2",
+          "title": "Lesson Two",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import "../styles/index.css";
 import Layout from "../components/Layout";
 import Link from "next/link";
+import glob from "glob";
 
 import Head from "next/head";
 
@@ -27,14 +28,14 @@ export default () => {
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="inline-flex rounded-md shadow">
-                      <Link href="/courses/web-development-foundations/1/build-a-web-page">
+                      <Link href="/course/course-1/module-1/lesson-1">
                         <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
                           Get started
                         </a>
                       </Link>
                     </div>
                     <div className="ml-3 inline-flex">
-                      <Link href="/courses/web-development-foundations">
+                      <Link href="/course/course-1">
                         <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out">
                           Learn more
                         </a>
