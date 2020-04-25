@@ -3,17 +3,15 @@ import Layout from "../../../../components/Layout";
 import glob from "glob";
 import Head from "next/head";
 import { ModuleTOC } from "../../../../components/TableOfContents";
-import {
-  BreadcrumbNav,
-  BreadcrumbLink,
-} from "../../../../components/Navigation";
+import { BreadcrumbNav } from "../../../../components/Navigation";
+import { LinkData } from "../../../../models/index";
 
 export default ({ moduleData, courseData }) => {
   // TODO: fashion breadcrumb from data
   // TODO: Add a start now button that goes to first lesson
   // TODO: Pluck description content from index.md???
 
-  const links: BreadcrumbLink[] = [
+  const links: LinkData[] = [
     {
       title: courseData.title,
       href: `/course/${courseData.path}`,

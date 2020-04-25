@@ -14,8 +14,13 @@ export interface ModuleTOC {
   lessons: LessonLink[];
 }
 
+export interface LinkData {
+  title: string;
+  href: string;
+}
+
 export interface PagerOptions {
-  previous: ModuleLink | LessonLink | null;
-  current: ModuleLink | LessonLink | null;
-  next: ModuleLink | LessonLink | null;
+  previous: LinkData | null;
+  current: LinkData | null;
+  next: LinkData | null;
 }
