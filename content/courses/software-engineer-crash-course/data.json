@@ -1,0 +1,19 @@
+{
+  "path": "software-engineer-crash-course",
+  "title": "A Crash Course on Becoming a Software Engineer",
+  "description": "",
+  "modules": [
+    {
+      "path": "software-engineer-crash-course/ui-building-blocks",
+      "title": "Learn UI Building Blocks to Launch a Website",
+      "description": "",
+      "lessons": [
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/build-a-webpage",
+          "title": "Build a Web Page",
+          "description": "A light introduction by creating a simple web page"
+        }
+      ]
+    }
+  ]
+}
