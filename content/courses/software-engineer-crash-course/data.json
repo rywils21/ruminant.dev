@@ -12,6 +12,16 @@
           "path": "software-engineer-crash-course/ui-building-blocks/build-a-webpage",
           "title": "Build a Web Page",
           "description": "A light introduction by creating a simple web page"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/deploy-a-website",
+          "title": "Deploy a Website",
+          "description": "Deploy your webpage to the internet"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/whats-happening-so-far",
+          "title": "What's Happening so Far",
+          "description": "Review what's going on with everything you've set up so far"
         }
       ]
     }
