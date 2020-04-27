@@ -22,6 +22,11 @@
           "path": "software-engineer-crash-course/ui-building-blocks/whats-happening-so-far",
           "title": "What's Happening so Far",
           "description": "Review what's going on with everything you've set up so far"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/give-your-site-meaning",
+          "title": "Give Your Site Meaning Using Semantic HTML",
+          "description": "Make your site look more like a web site by adding more content"
         }
       ]
     }
