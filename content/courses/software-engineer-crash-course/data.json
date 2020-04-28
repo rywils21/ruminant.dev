@@ -27,6 +27,11 @@
           "path": "software-engineer-crash-course/ui-building-blocks/give-your-site-meaning",
           "title": "Give Your Site Meaning Using Semantic HTML",
           "description": "Make your site look more like a web site by adding more content"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/make-things-pretty",
+          "title": "Make your site look pretty using CSS",
+          "description": "Begin styling your website"
         }
       ]
     }

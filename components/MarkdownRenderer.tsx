@@ -32,10 +32,41 @@ const markdownRenderers = {
     }
   },
   code: ({ language, value }) => {
+    let startLine = 0;
+    let ADDED = [];
+    let REMOVED = [];
+    const lines = value.split("\n");
+    if (lines[0].indexOf("added") > -1 || lines[0].indexOf("removed") > -1) {
+      startLine = 1;
+      const cmd = JSON.parse(lines[0]);
+      if (cmd.added) {
+        ADDED = cmd.added;
+      }
+      if (cmd.removed) {
+        REMOVED = cmd.removed;
+      }
+    }
+
+    const renderValue = lines.slice(startLine).join("\n");
+
     return (
       <div className="rounded bg-gray-800">
-        <SyntaxHighlighter language={language} style={okaidia}>
-          {value}
+        <SyntaxHighlighter
+          language={language}
+          style={okaidia}
+          showLineNumbers={true}
+          wrapLines={true}
+          lineProps={(lineNumber) => {
+            let style = { display: "block", backgroundColor: "transparent" };
+            if (ADDED.includes(lineNumber)) {
+              style.backgroundColor = "rgba(240, 255, 244, 0.7)";
+            } else if (REMOVED.includes(lineNumber)) {
+              style.backgroundColor = "rgba(254, 215, 215, 0.7)";
+            }
+            return { style };
+          }}
+        >
+          {renderValue}
         </SyntaxHighlighter>
       </div>
     );

@@ -10,7 +10,7 @@ export function BreadcrumbNav({ links }: BreadcrumbProps) {
   return (
     <div className="flex py-8">
       {links.map((link: LinkData, i: number) => (
-        <div className="flex items-center">
+        <div className="flex items-center" key={link.href}>
           <Link href={link.href}>
             <a className="p-2 rounded-md text-md leading-5 hover:bg-gray-100 transition duration-150 ease-in-out">
               {link.title}
