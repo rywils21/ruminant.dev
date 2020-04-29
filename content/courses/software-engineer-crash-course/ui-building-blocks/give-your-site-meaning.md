@@ -14,7 +14,8 @@ In this lesson, we're going to add some more content and make our site begin to 
 1. Wrap your content in a `main` tag
 
    ```html
-   { "added": [4, 18], "removed": [] }
+   { "added": [5, 19], "removed": [] }
+   // index.html
    <html>
      <head> </head>
      <body>
@@ -48,7 +49,8 @@ Let's add a nav:
 1. Add a nav above the image div in our existing code:
 
    ```html
-   { "added": [4, 5, 6, 7, 8, 9], "removed": [] }
+   { "added": [5, 6, 7, 8, 9, 10], "removed": [] }
+   // index.html
    <html>
      <head> </head>
      <body>
@@ -82,7 +84,8 @@ Let's add a nav:
 1. Finally, let's put a footer at the bottom:
 
    ```html
-   { "added": [25, 26, 27], "removed": [] }
+   { "added": [26, 27, 28], "removed": [] }
+   // index.html
    <html>
      <head> </head>
      <body>

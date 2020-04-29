@@ -29,9 +29,41 @@
           "description": "Make your site look more like a web site by adding more content"
         },
         {
-          "path": "software-engineer-crash-course/ui-building-blocks/make-things-pretty",
-          "title": "Make your site look pretty using CSS",
+          "path": "software-engineer-crash-course/ui-building-blocks/make-things-look-nice",
+          "title": "Make your site look nice using CSS",
           "description": "Begin styling your website"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/publish-multiple-pages",
+          "title": "Publish multiple pages and link them",
+          "description": "Build out your site with multiple web pages"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/more-ways-to-style",
+          "title": "More ways to style",
+          "description": "Get a little deeper into CSS and style some more things"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/add-interactivity",
+          "title": "Add interactivity with Javascript",
+          "description": "Collect email addresses from visitors using and input and javascript"
+        },
+        {
+          "path": "software-engineer-crash-course/ui-building-blocks/complete",
+          "title": "Complete this module",
+          "description": "Review everything we've covered so far"
+        }
+      ]
+    },
+    {
+      "path": "software-engineer-crash-course/store-data-on-the-internet",
+      "title": "Build a backend to complement your website",
+      "description": "",
+      "lessons": [
+        {
+          "path": "software-engineer-crash-course/store-data-on-the-internet/index",
+          "title": "Build a Backend",
+          "description": ""
         }
       ]
     }

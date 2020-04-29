@@ -10,7 +10,7 @@ export default () => {
   return (
     <Layout>
       <Head>
-        <title>Home</title>
+        <title>Polished</title>
       </Head>
 
       <div className="relative overflow-hidden">

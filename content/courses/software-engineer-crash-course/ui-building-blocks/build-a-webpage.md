@@ -34,6 +34,8 @@ Now that there's a project folder, let's build the web page.
 4. Open that file in the editor and type in this code:
 
    ```html
+   { "added": [2, 3, 4, 5, 6, 7, 8], "removed": []}
+   // index.html
    <html>
      <head>
      </head>
@@ -58,10 +60,13 @@ Let's make it a little more lively by adding an image and some more text. This w
 1. The file should still be open in your editor. Let's replace the text "A simple website" with an image
 
    ```html
+   { "added": [7, 8, 9], "removed": [5]}
+   // index.html
    <html>
      <head>
      </head>
      <body>
+       A simple website
        <div>
          <img src="" alt="" />
        </div>
@@ -78,6 +83,8 @@ Let's make it a little more lively by adding an image and some more text. This w
 3. Now let's add some more text. Update the file to look like this:
 
    ```html
+   { "added": [9 ,10, 11, 12, 13, 14, 15, 16], "removed": []}
+   // index.html
    <html>
      <head>
      </head>
