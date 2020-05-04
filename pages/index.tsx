@@ -13,7 +13,7 @@ export default () => {
         <title>Polished</title>
       </Head>
 
-      <div className="relative overflow-hidden mt-36">
+      <div className="relative overflow-hidden mt-20 md:mt-24 lg:mt-30 xl:mt-36">
         <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
           <div className="text-center">
             <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
@@ -36,7 +36,7 @@ export default () => {
         </div>
       </div>
 
-      <section className="bg-white overflow-hidden mt-48">
+      <section className="bg-white overflow-hidden mt-16 md:mt-30 lg:mt-40 xl:mt-48">
         <div className="relative max-w-screen-xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
           <div className="relative lg:flex lg:items-center">
             <div className="hidden lg:block lg:flex-shrink-0">
