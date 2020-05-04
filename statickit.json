@@ -3,6 +3,20 @@
     "contactForm": {
       "name": "Contact Form",
       "actions": [{ "type": "email", "to": "ryan@polished.app" }]
+    },
+    "newsletter": {
+      "name": "Newsletter Form",
+      "fields": {
+        "email": { "type": "email", "required": true }
+      },
+      "actions": [
+        {
+          "app": "convertkit",
+          "type": "applyTags",
+          "tags": ["ruminant.dev - general"]
+        },
+        { "type": "email", "to": "ryan@polished.app" }
+      ]
     }
   }
 }

@@ -1,13 +1,16 @@
 import "../styles/index.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useSpring, animated } from "react-spring";
 import Layout from "../components/Layout";
+import { useForm, ValidationError } from "@statickit/react";
 
 import Head from "next/head";
 import Link from "next/link";
 import { ArticleCard } from "../components/ArticleCard";
 
 export default () => {
+  const [state, handleSubmit] = useForm("newsletter");
+
   return (
     <Layout>
       <Head>
@@ -150,34 +153,45 @@ export default () => {
       <div className="bg-gray-50 py-24">
         <div className="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div className="px-6 py-6 bg-gray-900 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
-            <div className="xl:w-0 xl:flex-1">
-              <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
-                Learn to build real software
-              </h2>
-              <p className="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
-                Sign up to receive emails when new content is published.
-              </p>
-            </div>
-            <div className="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
-              <form className="sm:flex">
-                <input
-                  aria-label="Email address"
-                  type="email"
-                  required
-                  className="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
-                  placeholder="Enter your email"
-                />
-                <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                  <button className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 transition duration-150 ease-in-out">
-                    Submit
-                  </button>
+            {state.succeeded ? (
+              <div className="flex flex-col w-full items-center">
+                <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
+                  Thank you! You will receive emails soon.
+                </h2>
+              </div>
+            ) : (
+              <Fragment>
+                <div className="xl:w-0 xl:flex-1">
+                  <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
+                    Learn to build real software
+                  </h2>
+                  <p className="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
+                    Sign up to receive emails when new content is published.
+                  </p>
                 </div>
-              </form>
-              <p className="mt-3 text-sm leading-5 text-indigo-200">
-                Your privacy matters. Your email will never be shared with
-                anyone.
-              </p>
-            </div>
+                <div className="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
+                  <form className="sm:flex" onSubmit={handleSubmit}>
+                    <input
+                      aria-label="Email address"
+                      type="email"
+                      name="email"
+                      required
+                      className="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
+                      placeholder="Enter your email"
+                    />
+                    <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                      <button className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 transition duration-150 ease-in-out">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                  <p className="mt-3 text-sm leading-5 text-indigo-200">
+                    Your privacy matters. Your email will never be shared with
+                    anyone.
+                  </p>
+                </div>
+              </Fragment>
+            )}
           </div>
         </div>
       </div>
