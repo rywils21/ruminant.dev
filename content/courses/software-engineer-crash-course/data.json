@@ -61,9 +61,9 @@
       "description": "",
       "lessons": [
         {
-          "path": "software-engineer-crash-course/store-data-on-the-internet/index",
-          "title": "Build a Backend",
-          "description": ""
+          "path": "software-engineer-crash-course/store-data-on-the-internet/capture-subscribers-part-1",
+          "title": "Capture email subscribers part 1",
+          "description": "Build the backend needed to store emails submitted through your site"
         }
       ]
     }

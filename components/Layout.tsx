@@ -236,7 +236,8 @@ export default ({ children }) => {
       <Nav />
 
       <main
-        className="flex-1 relative z-0 overflow-y-auto pt-16 focus:outline-none  min-h-screen"
+        className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
+        style={{ minHeight: "calc(100vh - 64px)" }}
         tabIndex={0}
       >
         {children}

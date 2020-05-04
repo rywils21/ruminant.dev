@@ -2,20 +2,20 @@ import "../../../styles/index.css";
 import Layout from "../../../components/Layout";
 import glob from "glob";
 import Head from "next/head";
+import matter from "gray-matter";
 import React from "react";
 import { CourseTOC } from "../../../components/TableOfContents";
+import { MarkdownRenderer } from "../../../components/MarkdownRenderer";
 
-export default ({ data }) => {
+export default ({ data, content }) => {
   return (
     <Layout>
       <Head>
         <title>Course</title>
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl font-semibold text-gray-900">Course Page</h1>
+        <MarkdownRenderer content={content} />
       </div>
-
-      <div>content coming</div>
 
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
         <CourseTOC data={data} />
@@ -29,11 +29,18 @@ export async function getStaticProps({ ...ctx }) {
 
   const data = await import(`../../../content/courses/${course}/data.json`);
 
+  const courseContent = await import(
+    `../../../content/courses/${course}/index.md`
+  );
+
+  const courseMarkdown = matter(courseContent.default);
+
   console.log("course static props: ", ctx, data.default);
 
   return {
     props: {
       data: data.default,
+      content: courseMarkdown.content,
     },
   };
 }

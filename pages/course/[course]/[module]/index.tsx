@@ -5,8 +5,10 @@ import Head from "next/head";
 import { ModuleTOC } from "../../../../components/TableOfContents";
 import { BreadcrumbNav } from "../../../../components/Navigation";
 import { LinkData } from "../../../../models/index";
+import matter from "gray-matter";
+import { MarkdownRenderer } from "../../../../components/MarkdownRenderer";
 
-export default ({ moduleData, courseData }) => {
+export default ({ moduleData, courseData, content }) => {
   // TODO: fashion breadcrumb from data
   // TODO: Add a start now button that goes to first lesson
   // TODO: Pluck description content from index.md???
@@ -29,13 +31,8 @@ export default ({ moduleData, courseData }) => {
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BreadcrumbNav links={links} />
-
-        <h1 className="text-2xl font-semibold text-gray-900">
-          {moduleData.title}
-        </h1>
+        <MarkdownRenderer content={content} />
       </div>
-
-      <div>content coming</div>
 
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
         <ModuleTOC data={moduleData} />
@@ -51,6 +48,12 @@ export async function getStaticProps({ ...ctx }) {
 
   const courseData = data.default;
 
+  const moduleContent = await import(
+    `../../../../content/courses/${course}/${module}/index.md`
+  );
+
+  const moduleMarkdown = matter(moduleContent.default);
+
   console.log("module static props: ", ctx, data.default);
 
   const moduleData = courseData.modules.filter(
@@ -61,6 +64,7 @@ export async function getStaticProps({ ...ctx }) {
     props: {
       moduleData,
       courseData,
+      content: moduleMarkdown.content,
     },
   };
 }
@@ -71,6 +75,7 @@ export async function getStaticPaths() {
 
   const modulePaths = modules
     .filter((course) => course.indexOf("data.json") === -1)
+    .filter((course) => course.indexOf("index.md") === -1)
     .map((course) => course.replace("content/courses/", ""));
   console.log("module paths", modulePaths);
 

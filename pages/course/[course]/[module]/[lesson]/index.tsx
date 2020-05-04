@@ -150,9 +150,9 @@ export async function getStaticPaths() {
   //get all .md files in the posts dir
   const lessons = glob.sync("content/courses/**/*.md");
 
-  const lessonPaths = lessons.map((course) =>
-    course.replace("content/courses/", "").replace(".md", "")
-  );
+  const lessonPaths = lessons
+    .filter((lesson) => lesson.indexOf("index.md") === -1)
+    .map((course) => course.replace("content/courses/", "").replace(".md", ""));
   console.log("lesson paths", lessonPaths);
 
   // create paths with `slug` param
