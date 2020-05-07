@@ -55,8 +55,8 @@ export default () => {
               <blockquote>
                 <div className="text-2xl leading-9 text-gray-900">
                   <p>
-                    Thank you for visiting my site! My goal is for this to be a
-                    welcoming home of building software. Please feel free to{" "}
+                    Hello! My goal for this site is to be a welcoming world of
+                    building software. Please feel free to{" "}
                     <Link href="/contact">
                       <a className="text-indigo-600 font-medium hover:underline">
                         contact me
@@ -103,7 +103,7 @@ export default () => {
           <div className="md:ml-auto md:w-1/2 md:pl-10">
             <div className="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300"></div>
             <h2 className="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
-              The Software Engineer Crash Course
+              Software Engineer Crash Course
             </h2>
             <p className="mt-3 text-lg leading-7 text-gray-300">
               Build and deploy a real website without any prior knowledge. This
