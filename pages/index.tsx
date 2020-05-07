@@ -14,7 +14,7 @@ export default () => {
   return (
     <Layout>
       <Head>
-        <title>Polished</title>
+        <title>Ruminant.dev</title>
       </Head>
 
       <div className="relative overflow-hidden mt-20 md:mt-24 lg:mt-30 xl:mt-36">
@@ -29,9 +29,9 @@ export default () => {
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
-                <Link href="/courses">
+                <Link href="/projects">
                   <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
-                    Find a Course
+                    Start a new project
                   </a>
                 </Link>
               </div>
@@ -95,7 +95,7 @@ export default () => {
         <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
           <img
             className="w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6875F5&sat=-100&blend-mode=multiply"
+            src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80"
             alt="Support team"
           />
         </div>

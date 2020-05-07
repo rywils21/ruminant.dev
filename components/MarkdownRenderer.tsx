@@ -3,19 +3,36 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 const markdownRenderers = {
-  // TODO: Add appropriate tailwind styles to each level under h1
+  list: ({ ordered, children }) => {
+    if (ordered) {
+      return <ol className="list-decimal list-outside pl-6">{children}</ol>;
+    } else {
+      return <ul className="list-disc list-outside pl-6">{children}</ul>;
+    }
+  },
+  listItem: ({ children, ...rest }) => {
+    return (
+      <li className="text-lg text-gray-900 leading-normal mt-2">{children}</li>
+    );
+  },
   heading: ({ level, children }) => {
     if (level === 1) {
       return (
-        <h1 className="text-2xl font-semibold text-gray-900">{children}</h1>
+        <h1 className="text-4xl font-semibold text-gray-900 leading-normal">
+          {children}
+        </h1>
       );
     } else if (level === 2) {
       return (
-        <h2 className="text-2xl font-semibold text-gray-900">{children}</h2>
+        <h2 className="leading-tight text-xl font-bold text-black mb-2 mt-10">
+          {children}
+        </h2>
       );
     } else if (level === 3) {
       return (
-        <h3 className="text-2xl font-semibold text-gray-900">{children}</h3>
+        <h3 className="leading-tight text-lg font-bold text-black mt-8 mb-2">
+          {children}
+        </h3>
       );
     } else if (level === 4) {
       return (
@@ -30,6 +47,11 @@ const markdownRenderers = {
         <h6 className="text-2xl font-semibold text-gray-900">{children}</h6>
       );
     }
+  },
+  paragraph: ({ children }) => {
+    return (
+      <p className="text-lg text-gray-900 leading-normal mt-2">{children}</p>
+    );
   },
   code: ({ language, value }) => {
     let startLine = 0;
@@ -50,7 +72,7 @@ const markdownRenderers = {
     const renderValue = lines.slice(startLine).join("\n");
 
     return (
-      <div className="rounded bg-gray-800">
+      <div className="block my-4 rounded">
         <SyntaxHighlighter
           language={language}
           style={okaidia}
