@@ -4,7 +4,7 @@ import glob from "glob";
 import Head from "next/head";
 import matter from "gray-matter";
 import React from "react";
-import { CourseTOC } from "../../../components/TableOfContents";
+import { CourseTOC, CourseCTA } from "../../../components/TableOfContents";
 import { MarkdownRenderer } from "../../../components/MarkdownRenderer";
 
 export default ({ data, content }) => {
@@ -17,7 +17,12 @@ export default ({ data, content }) => {
         <MarkdownRenderer content={content} />
       </div>
 
+      <CourseCTA data={data} />
+
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
+        <h2 className="leading-tight text-3xl font-bold text-gray-900 overflow-hidden max-w-5xl mx-auto my-4 px-4">
+          Course Contents
+        </h2>
         <CourseTOC data={data} />
       </div>
     </Layout>

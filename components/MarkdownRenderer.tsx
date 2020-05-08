@@ -18,19 +18,19 @@ const markdownRenderers = {
   heading: ({ level, children }) => {
     if (level === 1) {
       return (
-        <h1 className="text-4xl font-semibold text-gray-900 leading-normal">
+        <h1 className="text-4xl font-semibold text-gray-900 leading-normal mt-12">
           {children}
         </h1>
       );
     } else if (level === 2) {
       return (
-        <h2 className="leading-tight text-xl font-bold text-black mb-2 mt-10">
+        <h2 className="leading-tight text-3xl font-bold text-gray-900 mb-2 mt-10">
           {children}
         </h2>
       );
     } else if (level === 3) {
       return (
-        <h3 className="leading-tight text-lg font-bold text-black mt-8 mb-2">
+        <h3 className="leading-tight text-xl font-bold text-gray-900 mt-8 mb-2">
           {children}
         </h3>
       );

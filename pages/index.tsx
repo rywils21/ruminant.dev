@@ -24,7 +24,8 @@ export default () => {
               Program with <span className="text-indigo-600">Purpose</span>
             </h2>
             <p className="mt-3 max-w-md sm:max-w-xl mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-2xl">
-              Don't just learn to code. Learn to build real software.
+              Don't just learn to code. Learn to build real websites and apps.
+              No prior knowledge required.
             </p>
             <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
