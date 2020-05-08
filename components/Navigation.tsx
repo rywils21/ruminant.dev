@@ -30,7 +30,7 @@ export function LessonPager({ pagerOptions }) {
   const { current, previous, next } = pagerOptions;
 
   return (
-    <div>
+    <div className="mb-6">
       {current !== null && (
         <div className="px-4 flex items-center justify-between sm:px-0 max-w-screen-xl mx-auto mt-12">
           <div className="w-0 flex-1 flex">

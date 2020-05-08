@@ -7,12 +7,10 @@ last_updated: "2020-26-04"
 
 # Build a web page
 
-Let's jump right in and build a web page.
-
 ## Software Needed
 
-1. A text editor - I mainly use [VSCode]()
-2. A web browser - I'll be using [Google Chrome]()
+1. A text editor - I mainly use [VSCode](https://code.visualstudio.com/)
+2. A web browser - I'll be using [Google Chrome](https://www.google.com/chrome/)
 3. Your computer's file system - Finder on MacOS or Explorer on Windows
 
 ## Step 1: Setup your project
@@ -34,11 +32,9 @@ Now that there's a project folder, let's build the web page.
 4. Open that file in the editor and type in this code:
 
    ```html
-   { "added": [2, 3, 4, 5, 6, 7, 8], "removed": []}
-   // index.html
+   { "added": [1, 2, 3, 4, 5, 6], "removed": [], "filename": "index.html" }
    <html>
-     <head>
-     </head>
+     <head> </head>
      <body>
        A simple website
      </body>
@@ -60,11 +56,9 @@ Let's make it a little more lively by adding an image and some more text. This w
 1. The file should still be open in your editor. Let's replace the text "A simple website" with an image
 
    ```html
-   { "added": [7, 8, 9], "removed": [5]}
-   // index.html
+   { "added": [5, 6, 7], "removed": [4], "filename": "index.html" }
    <html>
-     <head>
-     </head>
+     <head> </head>
      <body>
        A simple website
        <div>
@@ -83,11 +77,9 @@ Let's make it a little more lively by adding an image and some more text. This w
 3. Now let's add some more text. Update the file to look like this:
 
    ```html
-   { "added": [9 ,10, 11, 12, 13, 14, 15, 16], "removed": []}
-   // index.html
+   { "added": [7, 8, 9 ,10, 11, 12, 13, 14, 15, 16], "removed": [], "filename": "index.html" }
    <html>
-     <head>
-     </head>
+     <head> </head>
      <body>
        <div>
          <img src="" alt="" />
@@ -97,7 +89,9 @@ Let's make it a little more lively by adding an image and some more text. This w
            Welcome to my site
          </h1>
          <p>
-           This site is going to be my home on the internet. The place where you can find all of my work and profiles. I will collect things here that I like.
+           This site is going to be my home on the internet. The place where you
+           can find all of my work and profiles. I will collect things here that
+           I like.
          </p>
        </div>
      </body>
@@ -107,8 +101,6 @@ Let's make it a little more lively by adding an image and some more text. This w
 4. Refresh your browser again and it should now look like this:
 
    [updated img again]
-
-
 
 ## Wrap Up
 

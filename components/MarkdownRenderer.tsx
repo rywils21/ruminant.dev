@@ -79,11 +79,15 @@ const markdownRenderers = {
           showLineNumbers={true}
           wrapLines={true}
           lineProps={(lineNumber) => {
-            let style = { display: "block", backgroundColor: "transparent" };
+            let style = {
+              display: "block",
+              marginLeft: "-8px",
+              borderLeft: "4px solid transparent",
+            };
             if (ADDED.includes(lineNumber)) {
-              style.backgroundColor = "rgba(240, 255, 244, 0.7)";
+              style.borderLeft = "4px solid #31c48d";
             } else if (REMOVED.includes(lineNumber)) {
-              style.backgroundColor = "rgba(254, 215, 215, 0.7)";
+              style.borderLeft = "4px solid #e02424";
             }
             return { style };
           }}
