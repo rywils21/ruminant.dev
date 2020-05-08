@@ -13,7 +13,7 @@ export default ({ data, content }) => {
       <Head>
         <title>Course</title>
       </Head>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <MarkdownRenderer content={content} />
       </div>
 

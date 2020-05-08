@@ -6,7 +6,7 @@ export function ModuleTOC({ data }: any) {
   console.log("component data: ", data);
 
   return (
-    <div className="bg-white shadow rounded overflow-hidden max-w-screen-xl mx-auto mb-12">
+    <div className="bg-white shadow rounded overflow-hidden max-w-5xl mx-auto mb-12">
       <ul>
         {data.lessons.map(({ title, description, path }: any) => {
           return (
@@ -47,7 +47,7 @@ export function CourseTOC({ data }: any) {
       {data.modules.map(
         ({ title, description, path, lessons }: any, i: number) => {
           return (
-            <div className="bg-white shadow rounded overflow-hidden max-w-screen-xl mx-auto mb-12">
+            <div className="bg-white shadow rounded overflow-hidden max-w-5xl mx-auto mb-12">
               <ul>
                 {path && (
                   <li>
