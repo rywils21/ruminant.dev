@@ -35,6 +35,9 @@ export default ({ moduleData, courseData, content }) => {
       </div>
 
       <div className="bg-gray-100 mt-16 py-8 px-4 sm:px-6 lg:px-8">
+        <h2 className="leading-tight text-3xl font-bold text-gray-900 overflow-hidden max-w-5xl mx-auto my-4 px-4">
+          Module Contents
+        </h2>
         <ModuleTOC data={moduleData} />
       </div>
     </Layout>
