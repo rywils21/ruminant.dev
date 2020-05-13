@@ -7,6 +7,7 @@ import { BreadcrumbNav } from "../../../../components/Navigation";
 import { LinkData } from "../../../../models/index";
 import matter from "gray-matter";
 import { MarkdownRenderer } from "../../../../components/MarkdownRenderer";
+import { UnderConstructionBanner } from "../../../../components/ContactForm";
 
 export default ({ moduleData, courseData, content }) => {
   // TODO: fashion breadcrumb from data
@@ -29,6 +30,7 @@ export default ({ moduleData, courseData, content }) => {
       <Head>
         <title>Module</title>
       </Head>
+      <UnderConstructionBanner />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <BreadcrumbNav links={links} />
         <MarkdownRenderer content={content} />

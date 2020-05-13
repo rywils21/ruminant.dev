@@ -9,6 +9,7 @@ import {
   LessonPager,
 } from "../../../../../components/Navigation";
 import { LinkData, PagerOptions } from "../../../../../models/index";
+import { UnderConstructionBanner } from "../../../../../components/ContactForm";
 
 export default ({
   lessonData,
@@ -50,6 +51,7 @@ export default ({
       <Head>
         <title>{lessonData.title}</title>
       </Head>
+      <UnderConstructionBanner />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <BreadcrumbNav links={links} />
         <MarkdownRenderer content={lessonContent} />

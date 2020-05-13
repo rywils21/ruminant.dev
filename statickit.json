@@ -17,6 +17,21 @@
         },
         { "type": "email", "to": "ryan@polished.app" }
       ]
+    },
+
+    "courseConstruction": {
+      "name": "Course Under Construction Form",
+      "fields": {
+        "email": { "type": "email", "required": true }
+      },
+      "actions": [
+        {
+          "app": "convertkit",
+          "type": "applyTags",
+          "tags": ["ruminant.dev - secc interest"]
+        },
+        { "type": "email", "to": "ryan@polished.app" }
+      ]
     }
   }
 }

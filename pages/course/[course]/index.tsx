@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import React from "react";
 import { CourseTOC, CourseCTA } from "../../../components/TableOfContents";
 import { MarkdownRenderer } from "../../../components/MarkdownRenderer";
+import { UnderConstructionBanner } from "../../../components/ContactForm";
 
 export default ({ data, content }) => {
   return (
@@ -13,6 +14,8 @@ export default ({ data, content }) => {
       <Head>
         <title>Course</title>
       </Head>
+      <UnderConstructionBanner />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <MarkdownRenderer content={content} />
       </div>
