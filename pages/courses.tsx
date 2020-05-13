@@ -12,37 +12,32 @@ export default () => {
         <title>Courses</title>
       </Head>
 
-      <div className="relative overflow-hidden">
-        <div className="max-w-screen-xl mx-auto ">
-          <div>(TODO: load list of courses here)</div>
-          <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="border border-gray-200 bg-white rounded p-6 flex flex-col justify-between leading-normal shadow">
-                <div className="sm:text-center lg:text-left">
-                  <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-                    Learn fullstack web development
-                  </h2>
-                  <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    Web Development Foundations is a free online course designed
-                    to help you build modern web applications.
-                  </p>
-                  <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                    <div className="inline-flex rounded-md shadow">
-                      <Link href="/course/software-engineer-crash-course/ui-building-blocks">
-                        <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                          Get started
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="ml-3 inline-flex">
-                      <Link href="/course/software-engineer-crash-course">
-                        <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out">
-                          Learn more
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+      <div className="relative bg-gray-800 mt-36 max-w-5xl rounded-lg mx-auto overflow-hidden">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <img
+            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80"
+            alt="Support team"
+          />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <div className="text-base leading-6 font-semibold uppercase tracking-wider text-gray-300"></div>
+            <h2 className="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
+              Software Engineer Crash Course
+            </h2>
+            <p className="mt-3 text-lg leading-7 text-gray-300">
+              Build and deploy a real website without any prior knowledge. This
+              course covers a broad range of topics to provide an overview of
+              what it means to be a software engineer.
+            </p>
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="/course/software-engineer-crash-course">
+                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-gray-900 bg-white hover:text-gray-600 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                    Start Building
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
