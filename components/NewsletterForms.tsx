@@ -11,3 +11,14 @@ export function InArticleNewsletterForm() {
 
   return <div ref={ref}></div>;
 }
+
+export function GenericNewsletterForm() {
+  const ref = useRef<HTMLDivElement>(null);
+  useScript(
+    "https://creative-builder-1451.ck.page/2a32db53be/index.js",
+    "2a32db53be",
+    ref
+  );
+
+  return <div ref={ref}></div>;
+}

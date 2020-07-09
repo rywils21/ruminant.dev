@@ -7,8 +7,12 @@ import { useForm, ValidationError } from "@statickit/react";
 import Head from "next/head";
 import Link from "next/link";
 import { ArticleCard } from "../components/ArticleCard";
+import glob from "glob";
+import matter from "gray-matter";
+import moment from "moment";
+import { GenericNewsletterForm } from "../components/NewsletterForms";
 
-export default () => {
+export default ({ data }) => {
   const [state, handleSubmit] = useForm("newsletter");
 
   return (
@@ -19,77 +23,67 @@ export default () => {
 
       <div className="relative overflow-hidden mt-20 md:mt-24 lg:mt-30 xl:mt-36">
         <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-          <div className="text-center">
-            <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+          <div className="">
+            <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl text-center">
               Program with <span className="text-indigo-600">Purpose</span>
             </h2>
-            <p className="mt-3 max-w-md sm:max-w-xl mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-2xl">
-              Don't just learn to code. Learn to build real websites and apps.
-              No prior knowledge required.
-            </p>
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-              <div className="rounded-md shadow">
-                <Link href="/courses">
-                  <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
-                    Find a course
-                  </a>
-                </Link>
+            <div className="relative max-w-3xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
+              <div className="relative lg:flex lg:items-start">
+                <div className="hidden lg:block lg:flex-shrink-0">
+                  <img
+                    className="h-48 w-48 rounded-full xl:h-64 xl:w-64"
+                    src="/img/ryan-wilson.jpg"
+                    alt="Profile picture of Ryan Wilson"
+                  />
+                </div>
+
+                <div className="relative lg:ml-10">
+                  <div className="text-2xl leading-9 text-gray-900">
+                    <p className="mt-3 max-w-md sm:max-w-xl mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-2xl">
+                      I build software products and will occasionally post
+                      tutorials and blog posts.{" "}
+                      <Link href="/contact">
+                        <a className="underline text-indigo-600 hover:text-indigo-700">
+                          Contact Me
+                        </a>
+                      </Link>{" "}
+                      with questions or requests!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <section className="bg-white overflow-hidden mt-16 md:mt-30 lg:mt-40 xl:mt-48">
-        <div className="relative max-w-screen-xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
-          <div className="relative lg:flex lg:items-center">
-            <div className="hidden lg:block lg:flex-shrink-0">
-              <img
-                className="h-48 w-48 rounded-full xl:h-64 xl:w-64"
-                src="/img/ryan-wilson.jpg"
-                alt="Profile picture of Ryan Wilson"
-              />
-            </div>
-
-            <div className="relative lg:ml-10">
-              <blockquote>
-                <div className="text-2xl leading-9 text-gray-900">
-                  <p>
-                    Hello! My goal for this site is to be a welcoming world of
-                    building software. Please feel free to{" "}
-                    <Link href="/contact">
-                      <a className="text-indigo-600 font-medium hover:underline">
-                        contact me
-                      </a>
-                    </Link>{" "}
-                    whether you're learning to code, building something, or
-                    looking for feedback.
-                  </p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <ul className="max-w-3xl">
+          {data.map(({ frontmatter, markdownBody, slug }) => (
+            <li className="border-t-2 mt-12" key={slug}>
+              <div className="py-4">
+                <div className="text-gray-700">
+                  {moment(frontmatter.published).format("MMMM D, Y")}
                 </div>
-                <footer className="mt-8">
-                  <div className="flex">
-                    <div className="flex-shrink-0 lg:hidden">
-                      <img
-                        className="h-12 w-12 rounded-full"
-                        src="/ryan-wilson.jpg"
-                        alt="Profile picture of Ryan Wilson"
-                      />
-                    </div>
-                    <div className="ml-4 lg:ml-0">
-                      <div className="text-base leading-6 font-medium text-gray-900">
-                        Ryan Wilson
-                      </div>
-                      <div className="text-base leading-6 font-medium text-indigo-600">
-                        Creator of ruminant.dev
-                      </div>
-                    </div>
-                  </div>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
+                <h2 className="text-3xl tracking-tight leading-tight font-bold text-gray-900">
+                  {frontmatter.title}
+                </h2>
+
+                <div className="text-gray-700 pt-4">
+                  {markdownBody.split("\n")[1]}
+                </div>
+                <div className="pt-8">
+                  <Link href={slug}>
+                    <a className="text-blue-500 hover:text-blue-700 font-semibold">
+                      Read More
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <div className="relative bg-gray-800 mt-36">
         <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
@@ -150,51 +144,35 @@ export default () => {
         </div>
       </div> */}
 
-      <div className="bg-gray-50 py-24">
-        <div className="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-          <div className="px-6 py-6 bg-gray-900 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
-            {state.succeeded ? (
-              <div className="flex flex-col w-full items-center">
-                <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
-                  Thank you! You will receive emails soon.
-                </h2>
-              </div>
-            ) : (
-              <Fragment>
-                <div className="xl:w-0 xl:flex-1">
-                  <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9">
-                    Learn to build real software
-                  </h2>
-                  <p className="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
-                    Sign up to receive emails when new content is published.
-                  </p>
-                </div>
-                <div className="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
-                  <form className="sm:flex" onSubmit={handleSubmit}>
-                    <input
-                      aria-label="Email address"
-                      type="email"
-                      name="email"
-                      required
-                      className="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
-                      placeholder="Enter your email"
-                    />
-                    <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                      <button className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 transition duration-150 ease-in-out">
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                  <p className="mt-3 text-sm leading-5 text-indigo-200">
-                    Your privacy matters. Your email will never be shared with
-                    anyone.
-                  </p>
-                </div>
-              </Fragment>
-            )}
-          </div>
-        </div>
+      <div className="my-12 flex justify-center">
+        <GenericNewsletterForm />
       </div>
     </Layout>
   );
 };
+
+// src/pages/index.js
+export async function getStaticProps() {
+  const slugs = glob
+    .sync("content/articles/**/*.md")
+    .map((file) => file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim());
+
+  const data = [];
+  for (let i = 0; i < slugs.length; i++) {
+    const slug = slugs[i];
+    const content = await import(`../content/articles/${slug}.md`);
+    const document = matter(content.default);
+
+    data.push({
+      frontmatter: document.data,
+      markdownBody: document.content,
+      slug: `/articles/${slug}`,
+    });
+  }
+
+  return {
+    props: {
+      data,
+    },
+  };
+}

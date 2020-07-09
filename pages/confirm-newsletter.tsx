@@ -1,25 +1,29 @@
-import "../../styles/index.css";
-import Layout from "../../components/Layout";
+import "../styles/index.css";
+import { useState, useEffect, Fragment } from "react";
+import { useSpring, animated } from "react-spring";
+import Layout from "../components/Layout";
+import { useForm, ValidationError } from "@statickit/react";
+
 import Head from "next/head";
-import matter from "gray-matter";
-import glob from "glob";
 import Link from "next/link";
+import { ArticleCard } from "../components/ArticleCard";
+import glob from "glob";
+import matter from "gray-matter";
 import moment from "moment";
 
 export default ({ data }) => {
-  console.log("data: ", data);
+  const [state, handleSubmit] = useForm("newsletter");
+
   return (
     <Layout>
       <Head>
-        <title>Articles</title>
+        <title>Ruminant.dev</title>
       </Head>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="">
-          <h1 className="text-4xl font-semibold text-gray-900">Articles</h1>
-          <p className="text-gray-700">
-            The latest articles from the Ruminant.dev blog
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900">Email Confirmed!</h1>
+          <p className="text-gray-700">Checkout the latest articles</p>
         </div>
 
         <ul className="max-w-3xl">
@@ -61,7 +65,7 @@ export async function getStaticProps() {
   const data = [];
   for (let i = 0; i < slugs.length; i++) {
     const slug = slugs[i];
-    const content = await import(`../../content/articles/${slug}.md`);
+    const content = await import(`../content/articles/${slug}.md`);
     const document = matter(content.default);
 
     data.push({
