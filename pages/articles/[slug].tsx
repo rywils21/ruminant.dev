@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import glob from "glob";
 import Head from "next/head";
 import { MarkdownRenderer } from "../../components/MarkdownRenderer";
-import { InArticleNewsletterForm } from "../../components/InArticleNewsletterForm";
+import { InArticleNewsletterForm } from "../../components/NewsletterForms";
 import { RyanWilson } from "../../components/Authors";
 import moment from "moment";
 
