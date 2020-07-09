@@ -7,8 +7,6 @@ headerImg: "https://images.unsplash.com/photo-1582198790090-0c41add69066?ixlib=r
 headerAlt: "Photo of a roller coaster"
 ---
 
-## Three years ago
-
 I was lucky and got a software engineering job straight out of college. I joined a brand new team working on a brand new product. The product was an infant. It still needed basic things like analytics. The first few months were a rush. We were preparing for a launch on a big stage, working long hours, and writing a ton of code. This is what fresh college grads dream of.
 
 Time passed by, and I started to grow complacent. The challenging problems to solve morphed from technical product challenges to organizational problems. It was a big company. There were a lot of dependencies, and each team had their own goals. As the naive college grad I was, I yearned for the days when it felt like we could focus on customer and product problems.

@@ -6,6 +6,8 @@ import glob from "glob";
 import Head from "next/head";
 import { MarkdownRenderer } from "../../components/MarkdownRenderer";
 import { InArticleNewsletterForm } from "../../components/InArticleNewsletterForm";
+import { RyanWilson } from "../../components/Authors";
+import moment from "moment";
 
 export default (props) => {
   return (
@@ -14,21 +16,20 @@ export default (props) => {
         <title>{props.frontmatter.title}</title>
       </Head>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="text-gray-500">
+          {moment(props.frontmatter.published).format("MMMM D, Y")}
+        </div>
         <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
           {props.frontmatter.title}
         </h1>
-        {/* <img
-          className="mt-8"
-          src={props.frontmatter.headerImg}
-          alt={props.frontmatter.headerAlt}
-        /> */}
+        <RyanWilson />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <MarkdownRenderer content={props.markdownBody} />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pt-6 pb-36 flex justify-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-36 flex justify-center">
         <InArticleNewsletterForm />
       </div>
     </Layout>
