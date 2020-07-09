@@ -7,8 +7,6 @@ headerImg: "https://images.unsplash.com/photo-1582198790090-0c41add69066?ixlib=r
 headerAlt: "Photo of a roller coaster"
 ---
 
-# Lessons learned from quitting my job and failing at business
-
 ## Three years ago
 I was lucky and got a software engineering job straight out of college. I joined a brand new team working on a brand new product. The product was an infant. It still needed basic things like analytics. The first few months were a rush. We were preparing for a launch on a big stage, working long hours, and writing a ton of code. This is what fresh college grads dream of.
 
@@ -26,7 +24,7 @@ The moment I had been waiting for was finally here. I was free to work on anythi
 
 The idea was a text editor that helps you write. The prominent feature was a canvas interface. You could organize documents, images, web pages, and other media in two-dimensional space to explore your thoughts when you write. You would be able to drag and snap ideas together to outline faster. On top of this thought exploration tool, I would add all the nice little features I found in other apps. Focus mode from [iaWriter]. Live markdown rendering like [Typora]. Grammar checking and readability scoring from [Grammarly] and [HemingwayApp]. Outfit it with integrations to platforms like WordPress so users can publish from the app when they finished.
 
-![Gif of Polished Drag and Snap Functionality]('https://ruminant.dev/img/drag-and-snap.gif')
+![Gif of Polished Drag and Snap Functionality](/img/drag-and-snap.gif)
 
 If you're thinking, "Alright, that's a lot of features. Pump the brakes dude. You need to find some real customers." You're right.
 

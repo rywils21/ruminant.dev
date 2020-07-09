@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import matter from "gray-matter";
 import glob from "glob";
 import Head from "next/head";
+import { MarkdownRenderer } from "../../components/MarkdownRenderer";
 
 export default (props) => {
   return (
@@ -11,18 +12,19 @@ export default (props) => {
       <Head>
         <title>{props.frontmatter.title}</title>
       </Head>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl font-semibold text-gray-900">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
           {props.frontmatter.title}
         </h1>
-        <img
+        {/* <img
+          className="mt-8"
           src={props.frontmatter.headerImg}
           alt={props.frontmatter.headerAlt}
-        />
+        /> */}
       </div>
 
-      <div>
-        <ReactMarkdown source={props.markdownBody} />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <MarkdownRenderer content={props.markdownBody} />
       </div>
     </Layout>
   );

@@ -48,9 +48,18 @@ const markdownRenderers = {
       );
     }
   },
+  image: ({ alt, src }) => {
+    return (
+      <div className="w-full flex justify-center">
+        <img src={src} alt={alt} />
+      </div>
+    );
+  },
   paragraph: ({ children }) => {
     return (
-      <p className="text-lg text-gray-900 leading-normal mt-2">{children}</p>
+      <p className="text-2xl text-gray-900 leading-loose tracking-tight mt-8">
+        {children}
+      </p>
     );
   },
   code: ({ language, value }) => {
