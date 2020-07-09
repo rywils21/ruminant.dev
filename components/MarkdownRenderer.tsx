@@ -3,6 +3,13 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 const markdownRenderers = {
+  link: ({ href, children }) => {
+    return (
+      <a className="text-blue-500 hover:text-blue-700" href={href}>
+        {children}
+      </a>
+    );
+  },
   list: ({ ordered, children }) => {
     if (ordered) {
       return <ol className="list-decimal list-outside pl-6">{children}</ol>;
@@ -50,9 +57,9 @@ const markdownRenderers = {
   },
   image: ({ alt, src }) => {
     return (
-      <div className="w-full flex justify-center">
+      <span className="w-full flex justify-center">
         <img src={src} alt={alt} />
-      </div>
+      </span>
     );
   },
   paragraph: ({ children }) => {

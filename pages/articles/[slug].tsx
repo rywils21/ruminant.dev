@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import glob from "glob";
 import Head from "next/head";
 import { MarkdownRenderer } from "../../components/MarkdownRenderer";
+import { InArticleNewsletterForm } from "../../components/InArticleNewsletterForm";
 
 export default (props) => {
   return (
@@ -25,6 +26,10 @@ export default (props) => {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <MarkdownRenderer content={props.markdownBody} />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pt-6 pb-36 flex justify-center">
+        <InArticleNewsletterForm />
       </div>
     </Layout>
   );
