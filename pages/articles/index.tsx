@@ -4,6 +4,7 @@ import Head from "next/head";
 import matter from "gray-matter";
 import glob from "glob";
 import Link from "next/link";
+import moment from "moment";
 
 export default ({ data }) => {
   console.log("data: ", data);
@@ -13,17 +14,36 @@ export default ({ data }) => {
         <title>Articles</title>
       </Head>
 
-      <div className="bg-white mt-36">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-semibold text-gray-900">Articles</h1>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="">
+          <h1 className="text-4xl font-semibold text-gray-900">Articles</h1>
+          <p className="text-gray-700">
+            The latest articles from the Ruminant.dev blog
+          </p>
         </div>
 
-        <ul>
+        <ul className="max-w-3xl">
           {data.map(({ frontmatter, markdownBody, slug }) => (
-            <li>
-              <Link href={slug}>
-                <a>{slug}</a>
-              </Link>
+            <li className="border-t-2 mt-12">
+              <div className="py-4">
+                <div className="text-gray-700">
+                  {moment(frontmatter.published).format("MMMM D, Y")}
+                </div>
+                <h2 className="text-3xl tracking-tight leading-tight font-bold text-gray-900">
+                  {frontmatter.title}
+                </h2>
+
+                <div className="text-gray-700 pt-4">
+                  {markdownBody.split("\n")[1]}
+                </div>
+                <div className="pt-8">
+                  <Link href={slug}>
+                    <a className="text-blue-500 hover:text-blue-700 font-semibold">
+                      Read More
+                    </a>
+                  </Link>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
