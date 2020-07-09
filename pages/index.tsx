@@ -46,7 +46,7 @@ export default () => {
             <div className="hidden lg:block lg:flex-shrink-0">
               <img
                 className="h-48 w-48 rounded-full xl:h-64 xl:w-64"
-                src="/ryan-wilson.jpg"
+                src="/img/ryan-wilson.jpg"
                 alt="Profile picture of Ryan Wilson"
               />
             </div>

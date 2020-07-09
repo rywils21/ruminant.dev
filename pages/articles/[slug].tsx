@@ -15,6 +15,10 @@ export default (props) => {
         <h1 className="text-2xl font-semibold text-gray-900">
           {props.frontmatter.title}
         </h1>
+        <img
+          src={props.frontmatter.headerImg}
+          alt={props.frontmatter.headerAlt}
+        />
       </div>
 
       <div>
