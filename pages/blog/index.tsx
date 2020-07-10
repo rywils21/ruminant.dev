@@ -12,15 +12,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <Head>
-        <title>Articles</title>
+        <title>Blog</title>
       </Head>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="">
           <h1 className="text-4xl font-semibold text-gray-900">Articles</h1>
-          <p className="text-gray-700">
-            The latest articles from the Ruminant.dev blog
-          </p>
+          <p className="text-gray-700">The latest blog posts</p>
         </div>
 
         <ul className="max-w-3xl">
