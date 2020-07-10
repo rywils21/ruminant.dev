@@ -8,8 +8,11 @@ import { MarkdownRenderer } from "../../components/MarkdownRenderer";
 import { InArticleNewsletterForm } from "../../components/NewsletterForms";
 import { RyanWilson } from "../../components/Authors";
 import moment from "moment";
+import { ClockIcon } from "../../components/Icons";
+import { readingTime } from "../../utils/readingTime";
 
 export default (props) => {
+  const stats = readingTime(props.markdownBody);
   return (
     <Layout>
       <Head>
@@ -22,6 +25,10 @@ export default (props) => {
         <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
           {props.frontmatter.title}
         </h1>
+        <div className="text-gray-500 flex items-center">
+          <ClockIcon className="w-4 h-4" />
+          <div className="px-2">{stats.text}</div>
+        </div>
         <RyanWilson />
       </div>
 
@@ -38,7 +45,7 @@ export default (props) => {
 
 export async function getStaticProps({ ...ctx }) {
   const { slug } = ctx.params;
-  const content = await import(`../../content/articles/${slug}.md`);
+  const content = await import(`../../content/blog/${slug}.md`);
   const data = matter(content.default);
 
   return {
@@ -51,7 +58,7 @@ export async function getStaticProps({ ...ctx }) {
 
 export async function getStaticPaths() {
   //get all .md files in the posts dir
-  const blogs = glob.sync("content/articles/**/*.md");
+  const blogs = glob.sync("content/blog/**/*.md");
 
   //remove path and extension to leave filename only
   const blogSlugs = blogs.map((file) =>
@@ -59,7 +66,7 @@ export async function getStaticPaths() {
   );
 
   // create paths with `slug` param
-  const paths = blogSlugs.map((slug) => `/articles/${slug}`);
+  const paths = blogSlugs.map((slug) => `/blog/${slug}`);
 
   return {
     paths,

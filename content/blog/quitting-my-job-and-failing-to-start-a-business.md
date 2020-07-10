@@ -61,7 +61,7 @@ I'm taking a break from working on [Polished](https://polished.app) for a few we
 
 If I could go back to November 8, 2019, knowing everything I know now, I would still quit my job. Some say it was too early to leave since I didn't have any prospective customers. If I stuck to that rule, I would have been working a full-time job forever.
 
-The big thing I would change is to start with a customer, not an idea. Everyone in the startup world talks about this. You've got to internalize it. The ego is a master of persuasion. It will guard ideas like a mother bear protecting it's young. Domesticate it by feeding it the healthy food of reality that comes from talking to other people.
+The big thing I would change is to start with a customer, not an idea. Everyone in the startup world talks about this. You've got to internalize it. The ego is a master of persuasion. It will guard ideas like a mother bear protecting it's young. Luckily, you can domesticate the bear that is your ego by consistently feeding it healthy thoughts based in reality that come from talking to other people. Be honest with yourself and prioritize people over ideas.
 
 I'd also start as simple as possible. It's fun to think about hard problems and boldly proclaim you're going to solve them. But you should aim to build a first version that will take a week or two to code.
 

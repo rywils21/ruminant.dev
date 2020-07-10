@@ -154,19 +154,19 @@ export default ({ data }) => {
 // src/pages/index.js
 export async function getStaticProps() {
   const slugs = glob
-    .sync("content/articles/**/*.md")
+    .sync("content/blog/**/*.md")
     .map((file) => file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim());
 
   const data = [];
   for (let i = 0; i < slugs.length; i++) {
     const slug = slugs[i];
-    const content = await import(`../content/articles/${slug}.md`);
+    const content = await import(`../content/blog/${slug}.md`);
     const document = matter(content.default);
 
     data.push({
       frontmatter: document.data,
       markdownBody: document.content,
-      slug: `/articles/${slug}`,
+      slug: `/blog/${slug}`,
     });
   }
 

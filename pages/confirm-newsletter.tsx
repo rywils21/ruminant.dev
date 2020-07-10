@@ -23,7 +23,9 @@ export default ({ data }) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         <div className="">
           <h1 className="text-4xl font-bold text-gray-900">Email Confirmed!</h1>
-          <p className="text-gray-700">Checkout the latest articles</p>
+          <p className="text-gray-700">
+            Checkout the latest articles from the blog
+          </p>
         </div>
 
         <ul className="max-w-3xl">
@@ -59,19 +61,19 @@ export default ({ data }) => {
 // src/pages/index.js
 export async function getStaticProps() {
   const slugs = glob
-    .sync("content/articles/**/*.md")
+    .sync("content/blog/**/*.md")
     .map((file) => file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim());
 
   const data = [];
   for (let i = 0; i < slugs.length; i++) {
     const slug = slugs[i];
-    const content = await import(`../content/articles/${slug}.md`);
+    const content = await import(`../content/blog/${slug}.md`);
     const document = matter(content.default);
 
     data.push({
       frontmatter: document.data,
       markdownBody: document.content,
-      slug: `/articles/${slug}`,
+      slug: `/blog/${slug}`,
     });
   }
 

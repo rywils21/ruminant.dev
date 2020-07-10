@@ -31,8 +31,8 @@ const mainNav: RouteItem[] = [
     route: "/projects",
   },
   {
-    displayName: "Articles",
-    route: "/articles",
+    displayName: "Blog",
+    route: "/blog",
   },
   {
     displayName: "Contact",

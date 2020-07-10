@@ -5,9 +5,10 @@ import matter from "gray-matter";
 import glob from "glob";
 import Link from "next/link";
 import moment from "moment";
+import { ClockIcon } from "../../components/Icons";
+import { readingTime } from "../../utils/readingTime";
 
 export default ({ data }) => {
-  console.log("data: ", data);
   return (
     <Layout>
       <Head>
@@ -32,7 +33,10 @@ export default ({ data }) => {
                 <h2 className="text-3xl tracking-tight leading-tight font-bold text-gray-900">
                   {frontmatter.title}
                 </h2>
-
+                <div className="text-gray-500 flex items-center pt-1">
+                  <ClockIcon className="w-4 h-4" />
+                  <div className="px-2">{readingTime(markdownBody).text}</div>
+                </div>
                 <div className="text-gray-700 pt-4">
                   {markdownBody.split("\n")[1]}
                 </div>
@@ -55,19 +59,19 @@ export default ({ data }) => {
 // src/pages/index.js
 export async function getStaticProps() {
   const slugs = glob
-    .sync("content/articles/**/*.md")
+    .sync("content/blog/**/*.md")
     .map((file) => file.split("/")[2].replace(/ /g, "-").slice(0, -3).trim());
 
   const data = [];
   for (let i = 0; i < slugs.length; i++) {
     const slug = slugs[i];
-    const content = await import(`../../content/articles/${slug}.md`);
+    const content = await import(`../../content/blog/${slug}.md`);
     const document = matter(content.default);
 
     data.push({
       frontmatter: document.data,
       markdownBody: document.content,
-      slug: `/articles/${slug}`,
+      slug: `/blog/${slug}`,
     });
   }
 

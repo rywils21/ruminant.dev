@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/articles", "destination": "/blog" },
+    {
+      "source": "/articles/quitting-my-job-and-failing-to-start-a-business",
+      "destination": "/blog/quitting-my-job-and-failing-to-start-a-business"
+    }
+  ]
+}
