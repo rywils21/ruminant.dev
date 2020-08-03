@@ -3,8 +3,7 @@ title: "Lessons learned from quitting my job and failing to start a business"
 author: "Ryan Wilson"
 published: "2020-07-09"
 last_updated: "2020-07-09"
-headerImg: "https://images.unsplash.com/photo-1582198790090-0c41add69066?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1778&q=80"
-headerAlt: "Photo of a roller coaster"
+description: "I quit my full-time job with a software developer salary to try to create a software business on my own. I didn't know anything at the time. This is the story of how I spent seven months doing the wrong things."
 ---
 
 I was lucky and got a software engineering job straight out of college. I joined a brand new team working on a brand new product. The product was an infant. It still needed basic things like analytics. The first few months were a rush. We were preparing for a launch on a big stage, working long hours, and writing a ton of code. This is what fresh college grads dream of.

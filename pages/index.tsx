@@ -70,7 +70,7 @@ export default ({ data }) => {
                 </h2>
 
                 <div className="text-gray-700 pt-4">
-                  {markdownBody.split("\n")[1]}
+                  {frontmatter.description}
                 </div>
                 <div className="pt-8">
                   <Link href={slug}>

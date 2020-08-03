@@ -16,11 +16,6 @@ export default ({ data }) => {
       </Head>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="">
-          <h1 className="text-4xl font-semibold text-gray-900">Articles</h1>
-          <p className="text-gray-700">The latest blog posts</p>
-        </div>
-
         <ul className="max-w-3xl">
           {data.map(({ frontmatter, markdownBody, slug }) => (
             <li className="border-t-2 mt-12" key={slug}>
@@ -36,7 +31,7 @@ export default ({ data }) => {
                   <div className="px-2">{readingTime(markdownBody).text}</div>
                 </div>
                 <div className="text-gray-700 pt-4">
-                  {markdownBody.split("\n")[1]}
+                  {frontmatter.description}
                 </div>
                 <div className="pt-8">
                   <Link href={slug}>

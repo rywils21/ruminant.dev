@@ -3,6 +3,7 @@ title: "Learning to Build in Public"
 author: "Ryan Wilson"
 published: "2020-08-02"
 last_updated: "2020-08-02"
+description: "Building in public is hard. I'm starting something new and trying to get better at sharing the journey."
 ---
 
 ## Failing to Start a Software Business
@@ -25,7 +26,7 @@ The ability to create software is magical. Software lets you build fast. You can
 
 It's also easy to fall into the trap of building with your head in the sand when you love to make things.
 
-After seven long months, I realized I had my head in the sand. I needed to take a complete break from Polished.
+After seven long months, I realized I had my head in the sand. I needed to take a complete break from [Polished](https://polished.app).
 
 I had to start something new.
 
